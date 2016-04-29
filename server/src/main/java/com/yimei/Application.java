@@ -1,6 +1,6 @@
 package com.yimei;
 
-import kitt.KittHessianServiceExporter;
+import com.yimei.ext.hessian.KittHessianServiceExporter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

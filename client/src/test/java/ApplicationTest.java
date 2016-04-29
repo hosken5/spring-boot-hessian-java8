@@ -10,6 +10,7 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import static org.assertj.core.api.BDDAssertions.then;
@@ -75,6 +76,15 @@ public class ApplicationTest {
 
         then(foo.getName())
                 .isEqualTo("foo");
+    }
+
+    @Test
+    public void getBigDecimal(){
+        BigDecimal b = userService.getBigDecimal(BigDecimal.valueOf(2343.234f)) ;
+        then(b).isEqualTo(BigDecimal.valueOf(2343.234f).add(BigDecimal.ONE))  ;
+
+        BigDecimal  bw = BigDecimal.ONE ;
+        b.toString() ;
     }
 
 }

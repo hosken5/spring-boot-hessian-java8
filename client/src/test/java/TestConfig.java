@@ -1,6 +1,6 @@
 import com.yimei.HelloService;
 import com.yimei.UserService;
-import kitt.KittHessianProxyFactoryBean;
+import com.yimei.ext.hessian.KittHessianProxyFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.remoting.caucho.HessianProxyFactoryBean;

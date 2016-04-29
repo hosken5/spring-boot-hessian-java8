@@ -1,4 +1,4 @@
-package kitt;
+package com.yimei.ext.hessian;
 
 import org.springframework.remoting.caucho.HessianProxyFactoryBean;
 

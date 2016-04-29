@@ -1,4 +1,4 @@
-package kitt;
+package com.yimei.ext.hessian;
 
 import com.caucho.hessian.io.SerializerFactory;
 

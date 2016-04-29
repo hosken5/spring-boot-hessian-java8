@@ -1,14 +1,11 @@
-package kitt;
+package com.yimei.ext.hessian;
 
 
-import com.caucho.hessian.io.AbstractSerializerFactory;
-import com.caucho.hessian.io.Deserializer;
-import com.caucho.hessian.io.HessianProtocolException;
-import com.caucho.hessian.io.Serializer;
-import kitt.deserializer.Java8LocalDateDeserializer;
-import kitt.deserializer.Java8LocalDateTimeDeserializer;
-import kitt.serializer.Java8LocalDateSerializer;
-import kitt.serializer.Java8LocalDateTimeSerializer;
+import com.caucho.hessian.io.*;
+import com.yimei.ext.hessian.deserializer.Java8LocalDateDeserializer;
+import com.yimei.ext.hessian.deserializer.Java8LocalDateTimeDeserializer;
+import com.yimei.ext.hessian.serializer.Java8LocalDateSerializer;
+import com.yimei.ext.hessian.serializer.Java8LocalDateTimeSerializer;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -28,6 +25,8 @@ public class Java8TimeSerializerFactory extends AbstractSerializerFactory {
         Deserializers.put(LocalDateTime.class, new Java8LocalDateTimeDeserializer());
         Serializers.put(LocalDate.class, new Java8LocalDateSerializer());
         Deserializers.put(LocalDate.class, new Java8LocalDateDeserializer());
+        Serializers.put(java.math.BigDecimal.class, new StringValueSerializer());
+        Deserializers.put(java.math.BigDecimal.class, new BigDecimalDeserializer());
     }
 
     @Override

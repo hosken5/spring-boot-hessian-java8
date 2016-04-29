@@ -19,6 +19,7 @@ apply plugin: 'spring-boot'
 //}
 
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 
@@ -27,7 +28,12 @@ targetCompatibility = 1.8
 
 
 dependencies {
-    compile project(":hessian-ext")
+
+//    group 'com.yimei'
+//    version '1.0.0-SNAPSHOT'
+
+    compile("com.yimei:hessian-4.0.38-ext:1.0.0-SNAPSHOT")
+   // compile project(":hessian-ext")
     compile project(":common")
     compile("org.springframework.boot:spring-boot-starter")
     compile("org.springframework.boot:spring-boot-starter-web")

@@ -1,4 +1,4 @@
-package kitt.serializer;
+package com.yimei.ext.hessian.serializer;
 
 
 import java.time.LocalDate;
@@ -9,10 +9,10 @@ import java.time.format.DateTimeFormatter;
  * Serializes LocalDateTime objects in the Joda Time API.
  *
  */
-public class Java8LocalDateSerializer extends AbstractJodaSerializer {
+public class Java8LocalDateSerializer extends AbstractJava8Serializer {
 
     @Override
-    protected String jodaObjectToString(Object obj) {
+    protected String objectToString(Object obj) {
         return ((LocalDate) obj).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
     }
 }

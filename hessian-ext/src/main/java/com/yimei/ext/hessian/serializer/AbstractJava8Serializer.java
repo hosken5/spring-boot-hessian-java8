@@ -1,4 +1,4 @@
-package kitt.serializer;
+package com.yimei.ext.hessian.serializer;
 
 import com.caucho.hessian.io.AbstractHessianOutput;
 import com.caucho.hessian.io.AbstractSerializer;
@@ -6,10 +6,10 @@ import com.caucho.hessian.io.AbstractSerializer;
 import java.io.IOException;
 
 /**
- * Superclass of serializers of objects in the Joda Time API.
+ *
  *
  */
-public abstract class AbstractJodaSerializer extends AbstractSerializer {
+public abstract class AbstractJava8Serializer extends AbstractSerializer {
 
     @Override
     public void writeObject(Object obj, AbstractHessianOutput out) throws IOException {
@@ -26,7 +26,7 @@ public abstract class AbstractJodaSerializer extends AbstractSerializer {
 
             if (ref < -1) {
                 out.writeString("value");
-                out.writeString(jodaObjectToString(obj));
+                out.writeString(objectToString(obj));
                 out.writeMapEnd();
             } else {
                 if (ref == -1) {
@@ -35,10 +35,10 @@ public abstract class AbstractJodaSerializer extends AbstractSerializer {
                     out.writeObjectBegin(cl.getName());
                 }
 
-                out.writeString(jodaObjectToString(obj));
+                out.writeString(objectToString(obj));
             }
         }
     }
 
-    protected abstract String jodaObjectToString(Object obj);
+    protected abstract String objectToString(Object obj);
 }

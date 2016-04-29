@@ -1,4 +1,4 @@
-package kitt.deserializer;
+package com.yimei.ext.hessian.deserializer;
 
 
 import com.caucho.hessian.HessianException;
@@ -11,7 +11,7 @@ import java.io.IOException;
  * Deserializes objects in the Joda Time API.
  *
  */
-public abstract class AbstractJodaDeserializer extends AbstractDeserializer {
+public abstract class AbstractJava8Deserializer extends AbstractDeserializer {
 
     @Override
     public abstract Class<?> getType();

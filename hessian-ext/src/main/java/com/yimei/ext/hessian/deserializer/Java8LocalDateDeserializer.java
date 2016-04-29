@@ -1,19 +1,18 @@
-package kitt.deserializer;
+package com.yimei.ext.hessian.deserializer;
 
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 
 /**
  *
  */
-public class Java8LocalDateDeserializer extends AbstractJodaDeserializer {
+public class Java8LocalDateDeserializer extends AbstractJava8Deserializer {
 
     @Override
     public Class<?> getType() {
-        return LocalDateTime.class;
+        return LocalDate.class;
     }
 
     @Override

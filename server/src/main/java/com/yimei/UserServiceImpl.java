@@ -2,6 +2,7 @@ package com.yimei;
 
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 
@@ -23,5 +24,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public java.time.LocalDateTime getJava8LocalDate() {
         return java.time.LocalDateTime.now();
+    }
+
+    @Override
+    public BigDecimal getBigDecimal(BigDecimal  b ) {
+        return b.add(BigDecimal.ONE);
     }
 }
